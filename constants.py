@@ -97,10 +97,14 @@ AI_AGENT_MAX_ITERATIONS = 5
 DB_SERVICE_PATH = "./.db_service"
 DB_CUSTOMER_PATH = "./.db_customer"
 
+# FAQデータベースのパス（追加）
+DB_FAQ_PATH = "./.db_faq"
+
 DB_NAMES = {
     DB_COMPANY_PATH: f"{RAG_TOP_FOLDER_PATH}/company",
     DB_SERVICE_PATH: f"{RAG_TOP_FOLDER_PATH}/service",
-    DB_CUSTOMER_PATH: f"{RAG_TOP_FOLDER_PATH}/customer"
+    DB_CUSTOMER_PATH: f"{RAG_TOP_FOLDER_PATH}/customer",
+    DB_FAQ_PATH: f"{RAG_TOP_FOLDER_PATH}/faq"  # (追加)
 }
 
 AI_AGENT_MODE_ON = "利用する"
@@ -116,8 +120,9 @@ SEARCH_SERVICE_INFO_TOOL_DESCRIPTION = "自社サービス「EcoTee」に関す�
 SEARCH_CUSTOMER_COMMUNICATION_INFO_TOOL_NAME = "search_customer_communication_tool"
 SEARCH_CUSTOMER_COMMUNICATION_INFO_TOOL_DESCRIPTION = "顧客とのやりとりに関する情報を参照したい時に使う"
 SEARCH_WEB_INFO_TOOL_NAME = "search_web_tool"
-SEARCH_WEB_INFO_TOOL_DESCRIPTION = "自社サービス「HealthX」に関する質問で、Web検索が必要と判断した場合に使う"
-
+SEARCH_WEB_INFO_TOOL_DESCRIPTION = "自社サービス「EcoTee」に関する質問で、Web検索が必要と判断した場合に使う" #(HealthX→EcoTeeへ修正)
+SEARCH_FAQ_TOOL_NAME = "search_faq_tool" #FAQ用のTool名を追加
+SEARCH_FAQ_TOOL_DESCRIPTION = "よくある質問とその回答を参照したい時に使う" #FAQ用のTool説明を追加
 
 # ==========================================
 # Slack連携関連

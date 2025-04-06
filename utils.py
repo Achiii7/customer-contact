@@ -230,6 +230,21 @@ def run_customer_doc_chain(param):
 
     return ai_msg["answer"]
 
+    # (ツール追加)AIエージェント機能を利用しない場合のFAQ参照用関数
+def run_faq_doc_chain(param):
+    """
+    FAQベクトルDBを参照して回答を生成するTool用関数
+    """
+    ai_msg = st.session_state.faq_doc_chain.invoke({
+        "input": param,
+        "chat_history": st.session_state.chat_history
+    })
+    st.session_state.chat_history.extend([
+        HumanMessage(content=param),
+        AIMessage(content=ai_msg["answer"])
+    ])
+    return ai_msg["answer"]
+
 
 def delete_old_conversation_log(result):
     """
